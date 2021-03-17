@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::resource('cities','CityController'); // il primo parametro corrisponde a localhost/nome_rotta
