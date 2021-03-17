@@ -20,7 +20,7 @@ class CityController extends Controller
             'cities' => $cities_data
         ];
 
-        return view('cities.index',$data);
+        return view('cities.index',$data); 
     }
 
     /**
@@ -52,7 +52,16 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        //
+        $cities_data = City::find($id); // come nel progetto Molisana ma leggermente diverso
+
+        if ($cities_data){ // se esiste
+            $data = [
+                'id_cities' => $cities_data
+            ];
+            return view('cities.show',$data); // usiamo il nome della rotta, crea il file show.blade.php dentro cities folder 
+        }
+        abort('404'); // se non esiste, anche senza else
+    
     }
 
     /**

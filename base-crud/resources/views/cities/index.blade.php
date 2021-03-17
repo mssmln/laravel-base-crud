@@ -14,15 +14,15 @@
         <th scope="col">DEEPEN YOUR CURIOSITY</th>
         </tr>
     </thead>
-    @foreach($cities as $city)
-        <tbody>
+    <tbody>
+        @foreach($cities as $city)
             <tr>
             <th scope="row">{{ $city->id }}</th>
             <td>{{ $city->name }}</td>
             <td>{{ $city->population }}</td>
-            <td><a href="">details</a></td>
+            <td><a href="{{ route('cities.show',['city' => $city->id ]) }}">details</a></td>
             </tr>
-        </tbody>
-    @endforeach
+        @endforeach
+    </tbody>
     </table>
 @endsection
