@@ -5,7 +5,7 @@
     </button>
     <div class="collapse navbar-collapse container" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-        <a class="nav-link active" href="{{ route('cities.index') }}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="">Home <span class="sr-only">(current)</span></a>
         <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
         <!--<a class="nav-link" href="#">Pricing</a>-->
         </div>
