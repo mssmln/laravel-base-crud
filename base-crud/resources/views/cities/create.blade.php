@@ -5,8 +5,9 @@
 @section('content')
     <h2 class="container">Fill in a new city</h2>
 
-    <form class="container" method="post"> @php metodo post per l'invio dei dati in maniera sicura rispetto al get @endphp
+    <form class="container" method="post" action="{{ route('cities.store') }}"> @php //metodo post per l'invio dei dati in maniera sicura rispetto al get @endphp
         @csrf @php //serve per generare un token @endphp
+        @method('POST') @php // per laravel @endphp
         <div class="form-group">
             <label for="name">name</label>
             <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
@@ -17,11 +18,11 @@
         </div>
         <div class="form-group">
             <label for="area">area</label>
-            <input type="number" class="form-control" name="area" id="area">"
+            <input type="number" class="form-control" name="area" id="area">
         </div>
         <div class="form-group">
             <label for="weather">weather</label>
-            <input type="text" class="form-control" name="weather "id="weather">
+            <input type="text" class="form-control" name="weather" id="weather">
         </div>
         <div class="form-group">
             <label for="area-code">area code</label>
