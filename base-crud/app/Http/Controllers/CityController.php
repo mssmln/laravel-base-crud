@@ -43,18 +43,20 @@ class CityController extends Controller
     {
         $data = $request->all(); // "->" rather than :: as it is not a class but an instance
         //dd($data); it worked smoothly
-        dd($data);
 
         //create a new instance to save up data
         $new_city = new City();
-        $new_city->name = $data['name'];
-        $new_city->population = $data['population'];
-        $new_city->area = $data['area'];
-        $new_city->weather = $data['weather'];
-        $new_city->area_code = $data['area_code'];
+        //$new_city->name = $data['name'];
+        //$new_city->population = $data['population'];
+        //$new_city->area = $data['area'];
+        //$new_city->weather = $data['weather']; 
+        //$new_city->area_code = $data['area_code'];
+        $new_city->fill($data); //che si aggancia a $fillable nel file model e sostituisce l'assegnazione per ciascuna colonna, vedi codice sopra commentato.
 
         $new_city->save();
-        dd($new_city);
+        //dd($new_city); it worked seamlessly
+
+        return redirect()->route('cities.index');
 
     }
 
