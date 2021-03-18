@@ -5,6 +5,7 @@
 @section('content')
     <h2>città dell'Irlanda</h2>
     @php //@dd($cities) @endphp
+    <button><a href="{{ route('cities.create') }}">add a new city</a></button>
     <table class="table">
     <thead>
         <tr>

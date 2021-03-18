@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/','HomeController@index')->name('homepage'); //make:controller senza --resource perciò devi creare tu i metodi nel file , il primo sarà index
 
-Route::resource('cities','CityController'); // il primo parametro corrisponde a localhost/nome_rotta
+Route::get('/form-page','HomeController@form')->name('route-form');
+
+
+Route::resource('cities','CityController'); // il primo parametro corrisponde a localhost/nome_uri

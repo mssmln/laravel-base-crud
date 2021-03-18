@@ -5,6 +5,9 @@ Inserite i prodotti attraverso phpMyAdmin.Consigli del giorno:
 
     Fate i passaggi con calma e trascriveteli, perché saranno sempre quelli
     Attenzionate la lista delle rotte*/
+
+/*Crud 2 fase:
+Realizzate la Create come visto a lezione (metodo create e store) sul progetto che avere iniziato ieri.*/
 ?>
 
 <!DOCTYPE html>
