@@ -4,7 +4,7 @@
 
 @section('content')
     <h2 class="container">Fill in a new city</h2>
-    @php //@dd($errors) @endphp
+    @php //@dd($errors) mostra un array vuoto se non ci sono errori @endphp
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -32,7 +32,13 @@
         </div>
         <div class="form-group">
             <label for="weather">weather</label>
-            <input type="text" class="form-control" name="weather" id="weather">
+            <select class="form-control" name="weather" id="weather">
+                @php //con selected mostriamo il messaggio al caricamento della pagina nella select @endphp
+                <option selected>select your weather</option>
+                <option value="dry">dry</option>
+                <option value="foggy">foggy</option>
+            </select>
+            @php //<input type="text" class="form-control" name="weather" id="weather"> @endphp
         </div>
         <div class="form-group">
             <label for="area-code">area code</label>

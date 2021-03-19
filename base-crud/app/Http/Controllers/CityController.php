@@ -93,9 +93,19 @@ class CityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(City $city)
     {
-        //
+        //dd($city); // it worked smoothly
+        //scrivere City $city tra () equivale a scrivere $city = City::find($id) per come è stato programmato Laravel, come invece hai fatto nella funzione show, $city può essere rinominato come preferisci
+
+        if ($city){ 
+            $data = [
+                'id_cities' => $city
+            ];
+            return view('cities.edit',$data); 
+        }
+        abort('404'); 
+
     }
 
     /**
