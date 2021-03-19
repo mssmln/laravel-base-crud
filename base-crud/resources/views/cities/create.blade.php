@@ -4,6 +4,16 @@
 
 @section('content')
     <h2 class="container">Fill in a new city</h2>
+    @php //@dd($errors) @endphp
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <form class="container" method="post" action="{{ route('cities.store') }}"> @php //metodo post per l'invio dei dati in maniera sicura rispetto al get @endphp
         @csrf @php //serve per generare un token @endphp

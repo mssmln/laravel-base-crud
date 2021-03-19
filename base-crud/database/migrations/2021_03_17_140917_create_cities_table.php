@@ -14,13 +14,13 @@ class CreateCitiesTable extends Migration
     public function up()
     {
         Schema::create('cities', function (Blueprint $table) {
-            $table->id();
+            $table->id(); //c'era già
             $table->string('name',20);
             $table->bigInteger('population');
             $table->float('area',4,1);
-            $table->string('weather',50);
+            $table->string('weather',50)->nullable()->default('mild');
             $table->string('area_code',10);
-            $table->timestamps();
+            $table->timestamps(); //c'era già
         });
     }
 

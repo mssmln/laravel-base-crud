@@ -8,6 +8,11 @@ Inserite i prodotti attraverso phpMyAdmin.Consigli del giorno:
 
 /*Crud 2 fase:
 Realizzate la Create come visto a lezione (metodo create e store) sul progetto che avere iniziato ieri.*/
+
+/*Crud 3 fase:
+Terminate la CRUD in modo da poter anche modificare e cancellare i dati dal vostro database.*/
+
+
 ?>
 
 <!DOCTYPE html>
