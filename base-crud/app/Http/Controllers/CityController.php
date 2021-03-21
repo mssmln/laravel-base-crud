@@ -115,9 +115,13 @@ class CityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, City $city)
     {
-        //
+        $data = $request->all();
+        $city->update($data);
+
+        return redirect()->route('cities.index',$city);
+    
     }
 
     /**
@@ -126,8 +130,10 @@ class CityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(City $city)
     {
-        //
+        $city->delete();
+        return redirect()->route('cities.index')->with('status','the city has been removed permanently');
+
     }
 }

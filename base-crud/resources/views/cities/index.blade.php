@@ -5,6 +5,13 @@
 @section('content')
     <h2>città dell'Irlanda</h2>
     @php //@dd($cities) @endphp
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{ session('status')}}
+        </div>
+    @endif
+
+
     <button><a href="{{ route('cities.create') }}">add a new city</a></button>
     <table class="table">
     <thead>
@@ -24,7 +31,11 @@
                 <td>
                     <button class="btn btn-outline-info"><a href="{{ route('cities.show',['city' => $city->id ]) }}">details</a></button>
                     <button class="btn btn-outline-warning"><a href="{{ route('cities.edit',['city' => $city->id ]) }}">edit</a></button>
-                    <button class="btn btn-outline-danger"><a href="{{ route('cities.destroy',['city' => $city->id ]) }}">delete</a></button>
+                    <form class="d-inline" method="post" action="{{ route('cities.destroy',$city->id) }}">
+                        @csrf 
+                        @method('DELETE') 
+                        <button class="btn btn-outline-danger">delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
