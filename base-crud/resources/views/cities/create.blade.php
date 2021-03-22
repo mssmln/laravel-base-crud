@@ -20,21 +20,22 @@
         @method('POST') @php // per laravel @endphp
         <div class="form-group">
             <label for="name">name</label>
-            <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" value="{{ old('name') }}">
         </div>
         <div class="form-group">
             <label for="population">population</label>
-            <input type="number" class="form-control" name="population" id="population">
+            <input type="number" class="form-control" name="population" id="population" value="{{ old('population') }}">
         </div>
         <div class="form-group">
             <label for="area">area</label>
-            <input type="number" class="form-control" name="area" id="area">
+            <input type="number" class="form-control" name="area" id="area" value="{{ old('area') }}">
         </div>
         <div class="form-group">
             <label for="weather">weather</label>
             <select class="form-control" name="weather" id="weather">
                 @php //con selected mostriamo il messaggio al caricamento della pagina nella select @endphp
-                <option selected>select your weather</option>
+                <option value="{{ old('weather') }}" selected>{{ old('weather') }}</option>
+                <option>select your weather</option>
                 <option value="dry">dry</option>
                 <option value="foggy">foggy</option>
             </select>
@@ -42,7 +43,7 @@
         </div>
         <div class="form-group">
             <label for="area-code">area code</label>
-            <input type="number" class="form-control" name="area_code" id="area-code">
+            <input type="number" class="form-control" name="area_code" id="area-code" value="{{ old('area_code') }}">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

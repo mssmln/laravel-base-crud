@@ -12,6 +12,18 @@ class CityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function valida(Request $request){
+        $request->validate([
+            'name' => 'required|unique:cities|max:20',
+            'population' => 'required|max:20',
+            'area' => 'required|max:4',
+            'weather' => 'nullable|max:50',
+            'area_code' => 'required|unique:cities|max:10'
+        ]);
+    }
+
+
     public function index()
     {
         $cities_data = City::all(); // retrieve data from dbcities
@@ -43,13 +55,7 @@ class CityController extends Controller
     {
         $data = $request->all(); // "->" rather than :: as it is not a class but an instance
         //dd($data); it worked smoothly
-        $request->validate([
-            'name' => 'required|unique:cities|max:20',
-            'population' => 'required|max:20',
-            'area' => 'required|max:4',
-            'weather' => 'nullable|max:50',
-            'area_code' => 'required|unique:cities|max:10'
-        ]);
+        $this->valida($request);
 
         //create a new instance to save up data
         $new_city = new City();
